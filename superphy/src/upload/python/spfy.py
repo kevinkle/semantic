@@ -46,10 +46,14 @@ def blob_savvy(args_dict):
                                     {'disable_vf': True, 'disable_serotype': True}.items()))
     else:
         # run the much faster vf and serotyping separately of amr
-        high.enqueue(savvy, dict(args_dict.items() +
+        j1 = high.enqueue(savvy, dict(args_dict.items() +
                                  {'disable_amr': True}.items()))
-        low.enqueue(savvy, dict(args_dict.items() +
+        j2 = low.enqueue(savvy, dict(args_dict.items() +
                                 {'disable_vf': True, 'disable_serotype': True}.items()))
+        time.sleep(60)
+        insert(j1.result)
+        insert(j2.result)
+
 
 
 def monitor():
