@@ -131,10 +131,12 @@ def spfy(args_dict):
     blob_savvy(args_dict)
     logging.info('blob_savvy enqueues finished')
 
+    '''
     logging.info('starting monitor()...')
     monitor()
     print 'monitor exited...in spfy()'
     logging.info('monitor exited...in spfy()')
+    '''
 
 if __name__ == "__main__":
     import argparse
