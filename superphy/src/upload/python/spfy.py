@@ -28,7 +28,7 @@ from savvy import savvy  # serotype/amr/vf
 # we use the high priority queue for things that should be immediately
 # returned to the user
 redis_conn = Redis()
-high = Queue(connection=redis_conn)
+high = Queue('high', connection=redis_conn)
 low = Queue('low', connection=redis_conn, default_timeout=600)
 
 
