@@ -1,6 +1,7 @@
 from rdflib import BNode, Literal, Graph
 from turtle_utils import generate_uri as gu
 
+
 # working with Serotype, Antimicrobial Resistance, & Virulence Factor data
 # structures
 
@@ -48,7 +49,7 @@ def parse_gene_dict(graph, gene_dict, uriGenome):
         for gene_record in gene_dict[contig_id]:
 
             # recreating the contig uri
-            uriContig = gu(':' +
+            uriContig = gu(uriGenome, '/contigs/' +
                            contig_id)  # now at contig uri
 
             # after this point we switch perspective to the gene and build down to
